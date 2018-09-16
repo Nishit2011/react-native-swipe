@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, PanResponder, Animated, Dimensions} from 'react-native';
+import {View, PanResponder, Animated, Dimensions, LayoutAnimation, UIManager} from 'react-native';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 
@@ -44,7 +44,10 @@ class Deck extends Component {
 
     }
 
-    
+    componentWillUpdate(){
+        UIManager.setLayoutAnimationEnabledExperimental && UIManager.setLayoutAnimationEnabledExperimental(true)
+        LayoutAnimation.spring();
+    }
     
     forceSwipe(direction){
         const x = direction === "right" ? SCREEN_WIDTH : -SCREEN_WIDTH;
