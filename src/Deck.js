@@ -40,7 +40,7 @@ class Deck extends Component {
                 
             }
         }); 
-        this.state = {panResponder, position};
+        this.state = {panResponder, position,index:0};
 
     }
 
@@ -83,6 +83,7 @@ class Deck extends Component {
     }
     renderCards(){
         return this.props.data.map((item,i) =>{
+            
             if(i<this.state.index){return null}
             if(i===this.state.index){
                 return (
