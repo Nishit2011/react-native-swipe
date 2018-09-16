@@ -44,6 +44,7 @@ export default class App extends React.Component {
         <Deck 
         data ={DATA}
         renderCard = {this.renderCard}
+        
         />
       </View>
       
